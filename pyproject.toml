@@ -1,0 +1,19 @@
+[project]
+name = "pageindex-trial"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "memorisdk>=2.3.2",
+    "pageindex==0.2.2",
+    "fastapi>=0.104.1",
+    "uvicorn>=0.24.0",
+    "python-multipart>=0.0.6",
+    "pydantic>=1.10.13",
+    "pydantic-settings>=2.0.0",
+    "openai>=1.0.0",
+    "sqlalchemy>=2.0.0",
+    "aiosqlite>=0.19.0",
+    "loguru>=0.7.0",
+]

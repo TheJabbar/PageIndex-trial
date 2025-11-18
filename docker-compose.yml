@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mount volumes for persistent data
+      - ./core:/app/core  # For application code
+      - ./data:/app/data  # For memori database
+      - ./uploaded_pdfs:/app/uploaded_pdfs  # For uploaded PDFs
+      - ./.env:/app/.env  # For environment variables
+    environment:
+      - PYTHONPATH=/app
+      - DATABASE_URL=sqlite:///./data/memori.db
+    networks:
+      - app-network
+
+volumes:
+  data:
+  pdfs:
+
+networks:
+  app-network:
+    driver: bridge
